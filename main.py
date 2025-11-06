@@ -16,8 +16,9 @@ try:
     result = int(num1) / int(num2)
 except ZeroDivisionError:
     print("Деление на ноль не допустимо")
+except ValueError:
+    print("Ошибка преобразования типов")
 else:
     print(result)
 finally:
     print("Завершение программы")
-  
