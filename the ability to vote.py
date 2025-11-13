@@ -1,12 +1,26 @@
-age = int(input("Введите Ваш возраст "))
-citezen = input("Вы гражданин страны ? (Введите 'Да' или 'Нет') ")
-out_human = input("Есть ли у вас судимость или запрет на голосование? (Введите 'Да' или 'Нет') ")
+def can_vote(age, citezen, out_human):
+    if age < 18:
+        return False
+    if citezen == "нет":
+        return False
+    if out_human == "да":
+        return False
+    return True
 
-if age < 18:
-    print("Вам меньше 18 лет ")
-elif citezen == "Нет" or citezen == "нет" or citezen == "НЕТ" :
-    print("Вы не можете голосовать ")
-elif out_human == "Да" or out_human == "да" or out_human == "ДА" :
-    print("Вы не можете голосовать ")
-else:
-    print("Голосуйте ")
+
+def data():
+    age = int(input("Введите Ваш возраст "))
+    citezen = input("Вы гражданин страны ? (Введите 'Да' или 'Нет') ").lower()
+    out_human = input("Есть ли у вас судимость или запрет на голосование? (Введите 'Да' или 'Нет') ").lower()
+    return age, citezen, out_human
+
+
+def main():
+    age, citezen, out_human = data()
+
+    if can_vote(age, citezen, out_human):
+        print("Голосуйте!")
+    else:
+        print("Вам нельзя голосовать!")
+
+main()
