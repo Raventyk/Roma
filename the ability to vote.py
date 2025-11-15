@@ -1,12 +1,20 @@
+#def can_vote(age, citezen, out_human):
+    #if age < 18:
+        #return False
+    #if citezen == "нет":
+        #return False
+    #if out_human == "да":
+        #return False
+    #return True
 def can_vote(age, citezen, out_human):
-    if age < 18:
+    if age < 18 or citezen == "нет" or out_human == "да":
         return False
-    if citezen == "нет":
-        return False
-    if out_human == "да":
-        return False
+        #return False
+    #if citezen == "нет":
+        #return False
+    #if out_human == "да":
+        #return False
     return True
-
 
 def input_data():
     input_age = input("Введите Ваш возраст ")
